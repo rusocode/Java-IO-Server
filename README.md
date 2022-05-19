@@ -1,7 +1,5 @@
-# Java IO Server
+# ChatIO
 TCP communication *with blocking I/O* between client/server where **one connection is handled by one thread**.
-
-![](https://github.com/rusocode/documentos/blob/master/img/test%20server.PNG)
 
 Note: This works on a local network, and to test them with many clients it is necessary to run them on a virtual machine.
 ## The Server Loop
