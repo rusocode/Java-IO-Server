@@ -1,6 +1,5 @@
 package com.silent.server;
 
-import java.awt.*;
 import java.net.*;
 import java.util.Map;
 import java.awt.event.*;
@@ -39,7 +38,7 @@ public class Client extends JFrame implements Runnable {
 
 	private JTextField txtNick, txtServer, txtMessage;
 	private JButton btnConnect;
-	private JComboBox<String> combo;
+	private JComboBox<String> nicks;
 	private JTextArea console;
 
 	private Socket socketOut, socketIn;
@@ -53,7 +52,6 @@ public class Client extends JFrame implements Runnable {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		initialize();
-		System.out.println(getHeight());
 	}
 
 	private void initialize() {
@@ -82,11 +80,11 @@ public class Client extends JFrame implements Runnable {
 		 * agrandamiento de la ventana, ya que "Conectar" ocupa 77px. */
 		panel.add(btnConnect, "w 93!, wrap");
 
-		combo = new JComboBox<>();
-		combo.addActionListener(new Listener());
-		combo.setFocusable(false);
-		combo.setEnabled(false);
-		panel.add(combo, "span, grow, wrap");
+		nicks = new JComboBox<>();
+		nicks.addActionListener(new Listener());
+		nicks.setFocusable(false);
+		nicks.setEnabled(false);
+		panel.add(nicks, "span, grow, wrap");
 
 		console = new JTextArea();
 		console.setEditable(false);
@@ -105,7 +103,6 @@ public class Client extends JFrame implements Runnable {
 	}
 
 	private class Listener extends KeyAdapter implements ActionListener {
-
 		// Sirve para comprobar el estado del boton
 		private boolean flag;
 
@@ -158,7 +155,7 @@ public class Client extends JFrame implements Runnable {
 					txtNick.setEnabled(false);
 					txtServer.setEnabled(false);
 					btnConnect.setText("Disconnect");
-					combo.setEnabled(true);
+					nicks.setEnabled(true);
 					txtMessage.setEnabled(true);
 					txtMessage.requestFocus();
 
@@ -182,8 +179,8 @@ public class Client extends JFrame implements Runnable {
 						txtNick.setEnabled(true);
 						txtServer.setEnabled(true);
 						btnConnect.setText("Connect");
-						combo.removeAllItems();
-						combo.setEnabled(false);
+						nicks.removeAllItems();
+						nicks.setEnabled(false);
 						console.setText(null);
 						txtMessage.setText("");
 						txtMessage.setEnabled(false);
@@ -207,7 +204,6 @@ public class Client extends JFrame implements Runnable {
 					Info.showClientMessage("Error closing the connection\n" + e);
 				}
 			}
-
 		}
 
 		private void enableBTN() {
@@ -232,8 +228,8 @@ public class Client extends JFrame implements Runnable {
 					packet.setNickOrig(txtNick.getText());
 					packet.setIpOrig(InetAddress.getLocalHost().getHostAddress());
 					packet.setPort("" + socketOut.getLocalPort());
-					packet.setNickDest(Objects.requireNonNull(combo.getSelectedItem()).toString());
-					packet.setIpDest(connections.get(combo.getSelectedItem().toString()));
+					packet.setNickDest(Objects.requireNonNull(nicks.getSelectedItem()).toString());
+					packet.setIpDest(connections.get(nicks.getSelectedItem().toString()));
 					packet.setMessage(txtMessage.getText());
 					streamOut.writeObject(packet);
 					txtMessage.setText("");
@@ -248,7 +244,6 @@ public class Client extends JFrame implements Runnable {
 			} catch (UnknownHostException e) {
 				Info.showClientMessage("Could not determine host IP address\n" + e);
 			} catch (IOException e) {
-				e.printStackTrace();
 				Info.showClientMessage("I/O error\n" + e);
 			} finally {
 				try {
@@ -263,7 +258,6 @@ public class Client extends JFrame implements Runnable {
 	@Override
 	@SuppressWarnings("InfiniteLoopStatement")
 	public void run() {
-
 		// Crea un servidor desde el cliente para poder recibir conexiones de otros clientes
 		try (ServerSocket server = new ServerSocket(CLIENT_PORT)) {
 
@@ -277,12 +271,11 @@ public class Client extends JFrame implements Runnable {
 				if (packet.getMessage() != null)
 					console.append(packet.getNickOrig() + ": " + packet.getMessage() + "\n");
 				else { // Si un cliente se conecto o desconecto...
-
 					// Actualiza los nicks del combo
-					combo.removeAllItems();
+					nicks.removeAllItems();
 					connections = packet.getConnections();
 					for (String nick : connections.keySet())
-						combo.addItem(nick);
+						nicks.addItem(nick);
 				}
 
 			}
@@ -303,7 +296,6 @@ public class Client extends JFrame implements Runnable {
 			} catch (IOException e) {
 				Info.showClientMessage("Error closing the connection\n" + e);
 			}
-
 		}
 	}
 

@@ -51,6 +51,7 @@ public class Server extends JFrame implements Runnable {
 	private ServerSocket server;
 	// Conexion de entrada y salida
 	private Socket socketIn, socketOut;
+	// Flujo de salida
 	private ObjectOutputStream streamOut;
 	// Paquete del flujo
 	private Packet packet;
@@ -172,7 +173,6 @@ public class Server extends JFrame implements Runnable {
 			try {
 
 				// Crea un flujo de entrada para recibir paquetes de la conexion
-				// Flujo de entrada y salida
 				ObjectInputStream streamIn = new ObjectInputStream(socketIn.getInputStream());
 
 				// Deserializa del flujo el paquete
@@ -191,7 +191,7 @@ public class Server extends JFrame implements Runnable {
 						console.append(packet.getNickOrig() + ": " + packet.getMessage() + " >> " + packet.getNickDest() + "\n");
 						// Crea un puente virtual con el cliente especificado
 						socketOut = new Socket(packet.getIpDest(), CLIENT_PORT);
-						// Crea un flujo de salida para enviar paquetes
+						// Crea un flujo de salida para enviar el paquete
 						streamOut = new ObjectOutputStream(socketOut.getOutputStream());
 						// Escribe el paquete serializado en el flujo
 						streamOut.writeObject(packet);
@@ -248,8 +248,10 @@ public class Server extends JFrame implements Runnable {
 	}
 
 	private void disconnect() throws IOException {
-		socketIn.close();
-		socketOut.close();
+		if (socketIn != null && socketOut != null) {
+			socketIn.close();
+			socketOut.close();
+		} else System.out.println("asd");
 	}
 
 	private synchronized void suspender() {
