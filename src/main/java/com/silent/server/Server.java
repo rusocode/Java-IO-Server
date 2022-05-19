@@ -22,19 +22,22 @@ import static com.silent.util.Constants.*;
  * <p>
  * En la clase Estados.java, el termino pausa es romper y supender seria como una pausa.
  * <p>
- * <a href="https://es.wikipedia.org/wiki/Difusi%C3%B3n_amplia">...</a>
- * https://masteringnetworks.com/que-es-el-broadcast-en-redes/
- * <a href="https://aleph.org.mx/por-que-se-dice-que-el-internet-es-bidireccional#:~:text=Podemos%20definir%20la%20comunicaci%C3%B3n%20bidireccional,una%20conversaci%C3%B3n%20en%20ambas%20direcciones">...</a>.
- * <a href="https://es.sawakinome.com/articles/words/difference-between-pause-and-stop.html">...</a>
+ * <a href="https://es.wikipedia.org/wiki/Difusi%C3%B3n_amplia">Difusion amplia</a>
+ * <a href="https://masteringnetworks.com/que-es-el-broadcast-en-redes/">Broadcast</a>
+ * <a href="https://aleph.org.mx/por-que-se-dice-que-el-internet-es-bidireccional#:~:text=Podemos%20definir%20la%20comunicaci%C3%B3n%20bidireccional,una%20conversaci%C3%B3n%20en%20ambas%20direcciones">Comunicacion bidireccional</a>.
+ * <a href="https://es.sawakinome.com/articles/words/difference-between-pause-and-stop.html">Diferencia entre pause y stop</a>
+ * <a href="https://stackoverflow.com/questions/56112598/proper-way-to-close-an-autocloseable">Manera correcta para aplicar el autocloseable</a>
  * <p>
  * TODO Es necesaria la sincronizacion en el metodo stop y isStopped?
+ * <p>
+ * TODO Agregar un label para indicar si el sv esta ON (verde) o OFF (rojo).
+ * <p>
  * TODO Agregar un switch con los tres tipos de direccion de destino: unicast, multicas y broadcast.
+ * <p>
  * TODO El servidor se pausa (stop) o se detiene?
- * TODO Comentar en pildoras
- * TODO Agregar la ip local del server en el titulo de la ventana
+ * <p>
  * TODO Aplicar MVC en un futuro...
  * <p>
- * <a href="https://stackoverflow.com/questions/56112598/proper-way-to-close-an-autocloseable">...</a>
  *
  * @author Ruso
  */
