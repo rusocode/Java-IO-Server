@@ -15,11 +15,23 @@
     </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>com.miglayout</groupId>
             <artifactId>miglayout-swing</artifactId>
             <version>5.1</version>
         </dependency>
+
+        <!-- https://projectlombok.org/setup/maven
+        Al ser una libreria para simplificar el desarrollo, entonces no hace falta que se empaquete cuando
+        se genere el .jar, por lo tanto se especifica el scope como 'provided' para no incluirla. -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
 </project>

@@ -36,7 +36,7 @@ import static com.silent.util.Constants.*;
  * <p>
  * TODO El servidor se pausa (stop) o se detiene?
  * <p>
- * TODO Aplicar MVC en un futuro...
+ * TODO Aplicar MVC en un futuro
  * <p>
  *
  * @author Ruso

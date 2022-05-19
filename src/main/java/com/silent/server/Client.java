@@ -24,7 +24,9 @@ import static com.silent.util.Constants.*;
  * la logica de por que no puedo usar la misma conexion para esto.
  * <p>
  * TODO Se puede reemplazar la conexion unidireccional por bidireccional usando los sockets de java? Con este concepto estaria utilizando la misma conexion para enviar y recibir mensajes, siendo un proceso mas eficiente.
+ * <p>
  * TODO Agregar un icono de enchufe al boton connect.
+ * <p>
  * TODO Encadenar metodos
  *
  * @author Ruso
