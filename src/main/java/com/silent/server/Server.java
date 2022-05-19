@@ -60,9 +60,9 @@ public class Server extends JFrame implements Runnable {
 
 	public Server() throws HeadlessException, UnknownHostException {
 
-		super("Server / " + InetAddress.getLocalHost().getHostAddress());
+		super("Server #" + InetAddress.getLocalHost().getHostAddress());
 		setResizable(false);
-		setSize(500, 430);
+		setSize(402, 439);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		initialize();
 

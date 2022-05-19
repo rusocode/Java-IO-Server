@@ -1,5 +1,6 @@
 package com.silent.server;
 
+import java.awt.*;
 import java.net.*;
 import java.util.Map;
 import java.awt.event.*;
@@ -52,6 +53,7 @@ public class Client extends JFrame implements Runnable {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		initialize();
+		System.out.println(getHeight());
 	}
 
 	private void initialize() {
