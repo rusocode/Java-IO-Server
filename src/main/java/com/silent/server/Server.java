@@ -251,7 +251,7 @@ public class Server extends JFrame implements Runnable {
 		if (socketIn != null && socketOut != null) {
 			socketIn.close();
 			socketOut.close();
-		} else System.out.println("asd");
+		}
 	}
 
 	private synchronized void suspender() {
