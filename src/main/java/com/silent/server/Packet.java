@@ -6,6 +6,8 @@ import java.util.*;
 /**
  * Serializa el paquete para poder enviarlo a travez de la red como una secuencia de bytes.
  *
+ * TODO Aplicar Lombok
+ *
  * @author Ruso
  */
 
