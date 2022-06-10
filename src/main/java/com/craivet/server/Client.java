@@ -1,4 +1,4 @@
-package com.silent.server;
+package com.craivet.server;
 
 import java.net.*;
 import java.util.Map;
@@ -10,7 +10,7 @@ import javax.swing.*;
 
 import net.miginfocom.swing.MigLayout;
 
-import static com.silent.util.Constants.*;
+import static com.craivet.util.Constants.*;
 
 /**
  * Clase encargada de conectarse con un servidor usando el protocolo TCP.

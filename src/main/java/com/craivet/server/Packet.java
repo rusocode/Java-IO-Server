@@ -1,4 +1,4 @@
-package com.silent.server;
+package com.craivet.server;
 
 import java.io.Serializable;
 import java.util.*;

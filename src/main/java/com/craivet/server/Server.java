@@ -1,4 +1,4 @@
-package com.silent.server;
+package com.craivet.server;
 
 import java.io.*;
 import java.net.*;
@@ -9,7 +9,7 @@ import java.awt.HeadlessException;
 
 import net.miginfocom.swing.MigLayout;
 
-import static com.silent.util.Constants.*;
+import static com.craivet.util.Constants.*;
 
 /**
  * Clase encargada de gestionar las conexiones.

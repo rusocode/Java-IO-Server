@@ -1,4 +1,4 @@
-package com.silent.util;
+package com.craivet.util;
 
 public final class Constants {
 
