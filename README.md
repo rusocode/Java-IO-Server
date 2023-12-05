@@ -1,4 +1,4 @@
-# ChatIO
+# Java IO Server
 TCP communication *with blocking I/O* between client/server where **one connection is handled by one thread**.
 
 This works on a local network, and to test them with many clients it is necessary to run them on a virtual machine.
