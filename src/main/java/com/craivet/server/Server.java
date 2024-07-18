@@ -63,13 +63,11 @@ public class Server extends JFrame implements Runnable {
     private boolean suspendido;
 
     public Server() throws HeadlessException, UnknownHostException {
-
         super("Server #" + InetAddress.getLocalHost().getHostAddress());
         setResizable(false);
         setSize(402, 439);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         initialize();
-
     }
 
     private void initialize() {
